@@ -15,6 +15,12 @@ class User{
 		
 	virtual void displayAccess() {}
 		
+		string getName(){
+			return username;
+		}
+		string getPassword(){
+			return password;
+		}
 };
 
 
@@ -27,7 +33,7 @@ class Employee: public User{
 	void displayAccess() override{
 		cout<<"Access Granted"<<endl;
 		cout<<"User: "<<username<<endl;
-		cout<<"Role: Administrator"<<endl;
+		cout<<"Role: Employee"<<endl;
 	}
 		
 };
@@ -49,7 +55,6 @@ class Admin: public User{
 
 class AccountManager{
 	private: 
-		int count = 0;
 		User* user;
 	public:
 		void setUser(User* user){
@@ -77,6 +82,16 @@ string password;
 	 cout<<"Enter Password: ";
 	 getline(cin, password);
 		
-		admin->displayAccess();
+		if(username == admin->getName() && password == admin->getPassword()){
+			admin->displayAccess();
+			adminControl = true;
+		}
+		else if(username == employee->getName() && password == employee->getPassword()){
+			employee->displayAccess();
+			
+		}
+		else{
+			cout<<"Error: Username/Password is Incorrect."<<endl;
+		}
 		
 }
