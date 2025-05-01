@@ -15,6 +15,7 @@ void menu(){
 string input;	
 	cout<<"INVENTORY MANAGEMENT SYSTEM"<<endl;
 	cout<<"=================================="<<endl;
+	cout<<"[0]\tExit Program"<<endl;
 	cout<<"[1]\tView Inventory"<<endl;
 	cout<<"[2]\tUpdate Item Quantities"<<endl;
 	cout<<"[3]\tRemove Item Quantities"<<endl;
@@ -24,8 +25,29 @@ string input;
 	cout<<"[6]\tPrint Current Inventory"<<endl;
 	}
 	cout<<"Input: ";
-	getline(cin,input);
-	readyItem();
+	int _input = exceptionHandle();
+	switch (_input){
+		case 0: 
+		return;
+		
+		break;
+		case 1: inventory.listItem();
+		
+		break;
+		case 2: 
+		cout<<"Input Name of ID: ";
+		getline(cin,input);
+		inventory.addQuantity(input);
+		
+		break;
+		case 3:
+		cout<<"Input Name of ID: ";
+		getline(cin,input);
+		inventory.removeItem(input);
+	}
+	
+	
+	
 	inventory.listItem();
 	
 }

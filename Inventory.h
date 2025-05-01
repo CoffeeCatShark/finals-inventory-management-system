@@ -133,7 +133,7 @@ class Inventory{
 		for(int i=0;i<count;i++){
 			if(key == items[i]->getID()){
 				string input;
-			cout<<"Enter Quantity of Item To Remove: ";
+			cout<<"Enter Quantity of "<<items[i]->getName()<<" To Remove: ";
 			int quant = exceptionHandle();
 			bool valid =  false;
 		
