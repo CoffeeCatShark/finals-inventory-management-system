@@ -7,7 +7,6 @@ class User{
 	private:
 		
 	protected:	
-		bool isAdmin = false;
 		string username;
 		string password;
 	public:
