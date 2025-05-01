@@ -2,6 +2,29 @@
 #include <string>
 using namespace std;
 
+int exceptionHandle(){
+	bool isValid = false;
+	int digit;
+	string input;
+	while(!isValid){
+		cout<<"Input: ";
+		try{
+		getline(cin,input);
+        digit = stoi(input); 
+        isValid = true;
+		}
+		catch (invalid_argument&) {
+                        cout << "Invalid input. Please enter a number." << endl;
+     	}
+      catch (out_of_range&) {
+    	cerr << "Quantity too large." << endl;
+    }
+	}
+	
+	return digit;
+}
+
+
 class Items{
 	private:
 		string name;
