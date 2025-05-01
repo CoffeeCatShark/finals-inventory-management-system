@@ -217,6 +217,17 @@ void deleteConfirm(){
 	getline(cin,input);
 	cout<<"Are you Sure you want to Delete This Item?[Y/N]: ";
 	getline(cin,input_);
+	input_ = capital(input_);
+	if(input_ == "Y" || input_ == "N"){
+		if(input_ == "Y"){
+			inventory.deleteItem(input);
+		}
+		else{
+			cout<<"Deletion Cancelled."<<endl;
+			return;
+		}
+	}
+	
 }
 
 void readyItem(){
