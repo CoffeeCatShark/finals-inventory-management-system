@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 bool adminControl = false;
-
+bool validUser = false;
 class User{
 	private:
 		
@@ -25,7 +25,7 @@ class User{
 
 class Employee: public User{
 	private:
-		bool isAdmin = false;
+
 	public: 
 	Employee(string x, string y): User(x,y) {}
 	
@@ -40,7 +40,7 @@ class Employee: public User{
 
 class Admin: public User{
 	private:
-		bool isAdmin = true;
+
 	public: 
 	Admin(string x, string y): User(x,y) {}
 		void displayAccess() override{
@@ -81,15 +81,20 @@ string password;
 	 getline(cin, password);
 		
 		if(username == admin->getName() && password == admin->getPassword()){
-			admin->displayAccess();
+			manager.setUser(admin);
 			adminControl = true;
+			validUser = true;
 		}
 		else if(username == employee->getName() && password == employee->getPassword()){
-			employee->displayAccess();
+			manager.setUser(employee);
+			validUser = true;
 			
 		}
 		else{
 			cout<<"Error: Username/Password is Incorrect."<<endl;
+			return;
 		}
-		
+				manager.displayUser();	
 }
+
+
