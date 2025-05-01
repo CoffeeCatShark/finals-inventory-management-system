@@ -157,6 +157,15 @@ int setQuantity(){
 	return quant;
 }
 
+void deleteConfirm(){
+	string input;
+	string input_;
+	cout<<"Enter ID of Item to Remove: ";
+	getline(cin,input);
+	cout<<"Are you Sure you want to Delete This Item?[Y/N]: ";
+	getline(cin,input_);
+}
+
 void readyItem(){
 	cout<<"Add Item"<<endl;
 	inventory.addItem(setName(),setID(),setQuantity());
