@@ -15,12 +15,16 @@ void menu(){
 string input;	
 	cout<<"INVENTORY MANAGEMENT SYSTEM"<<endl;
 	cout<<"=================================="<<endl;
-	cout<<"[1]\tUpdate Item Quantities"<<endl;
-	cout<<"[2]\tRemove Item Quantities"<<endl;
+	cout<<"[1]\tView Inventory"<<endl;
+	cout<<"[2]\tUpdate Item Quantities"<<endl;
+	cout<<"[3]\tRemove Item Quantities"<<endl;
 	if(adminControl == true){
-	cout<<"[3]\tAdd New Items"<<endl;
-	cout<<"[4]\tDelete Items from Inventory"<<endl;
+	cout<<"[4]\tAdd New Items"<<endl;
+	cout<<"[5]\tDelete Items from Inventory"<<endl;
+	cout<<"[6]\tPrint Current Inventory"<<endl;
 	}
+	cout<<"Input: ";
+	getline(cin,input);
 	
 	
 }
@@ -33,5 +37,7 @@ int main(){
 	
 	delete admin;
 	delete employee;
+	delete adminAccess;
+	delete employeeAccess;
 	return 0;
 }
