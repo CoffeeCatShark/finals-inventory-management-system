@@ -7,32 +7,14 @@ class User{
 	private:
 		
 	protected:	
-		int userCount = 1;
 		bool isAdmin = false;
 		string username;
 		string password;
 	public:
-		User(string username_, string password_, bool isAdmin_) : username(username_), password(password_), isAdmin(isAdmin_{} 
+		User(string username_, string password_) : username(username_), password(password_){} 
 		
 	virtual void displayAccess() {}
 		
-		int returnCount(){
-			return userCount;
-		}
-		void addCount(){
-			userCount++;
-		}
-		void removeCount(){
-			userCount--;
-		}
-	
-		string getName(){
-		return username;
-	}
-	
-		string getPass(){
-		return password;
-		}
 };
 
 
@@ -65,7 +47,21 @@ class Admin: public User{
 	
 };		
 
-
+class AccountManager{
+	private: 
+		int count = 0;
+		User* user;
+	public:
+		void setUser(User* user){
+			this->user = new Admin("ADMIN","ADMIN");	
+		}
+	
+		void displayUser(){
+			user->displayAccess();
+		}
+	
+	
+};
 
 
 
