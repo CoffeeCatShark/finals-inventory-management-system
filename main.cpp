@@ -25,7 +25,8 @@ string input;
 	}
 	cout<<"Input: ";
 	getline(cin,input);
-	
+	readyItem();
+	inventory.listItem();
 	
 }
 
