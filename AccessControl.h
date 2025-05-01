@@ -76,7 +76,6 @@ void login(){
 string username;
 string password;
 
-
 	 cout<<"Enter Username: ";
 	 getline(cin, username);
 	 cout<<"Enter Password: ";
