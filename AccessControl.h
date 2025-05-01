@@ -53,7 +53,7 @@ class AccountManager{
 		User* user;
 	public:
 		void setUser(User* user){
-			this->user = new Admin("ADMIN","ADMIN");	
+			this->user = user;	
 		}
 	
 		void displayUser(){
