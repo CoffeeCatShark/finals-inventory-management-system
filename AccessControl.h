@@ -41,7 +41,7 @@ class Admin: public User{
 		void displayAccess() override{
 		cout<<"Access Granted"<<endl;
 		cout<<"User: "<<username<<endl;
-		cout<<"Role: Employee"<<endl;
+		cout<<"Role: Admin"<<endl;
 	}
 	
 	
@@ -62,10 +62,10 @@ class AccountManager{
 	
 	
 };
+AccountManager manager;
 
-
-
-
+Admin* admin = new Admin("ADMIN","ADMIN");
+Employee* employee = new Employee("AAA","AAA");
 
 void login(){
 string username;
@@ -76,5 +76,7 @@ string password;
 	 getline(cin, username);
 	 cout<<"Enter Password: ";
 	 getline(cin, password);
+		
+		admin->displayAccess();
 		
 }
