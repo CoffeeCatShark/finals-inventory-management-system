@@ -26,6 +26,8 @@ string input;
 	}
 	cout<<"Input: ";
 	int _input = exceptionHandle();
+	
+	if(adminControl == false){
 	switch (_input){
 		case 0: 
 		return;
@@ -44,8 +46,14 @@ string input;
 		cout<<"Input Name of ID: ";
 		getline(cin,input);
 		inventory.removeItem(input);
+		
+		break;
+		default: cout<<"BUFFER"<<endl;
 	}
-	
+}
+	if(adminControl == true){
+		
+	}
 	
 	
 	inventory.listItem();
