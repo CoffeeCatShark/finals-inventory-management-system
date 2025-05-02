@@ -37,7 +37,7 @@ int exceptionHandle(){
                         		cout<<"Input: ";
      	}
       catch (out_of_range&) {
-    	cerr << "Quantity too large." << endl;
+    	cerr << "Input too large." << endl;
     	cin.clear();
     			cout<<"Input: ";
     }
