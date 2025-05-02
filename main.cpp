@@ -52,7 +52,39 @@ string input;
 	}
 }
 	if(adminControl == true){
+		switch (_input){
+		case 0: 
+		return;
 		
+		break;
+		case 1: inventory.listItem();
+		
+		break;
+		case 2: 
+		cout<<"Input Name of ID: ";
+		getline(cin,input);
+		inventory.addQuantity(input);
+		
+		break;
+		case 3:
+		cout<<"Input Name of ID: ";
+		getline(cin,input);
+		inventory.removeItem(input);
+		
+		break;
+		case 4: 
+		readyItem();
+		
+		break;
+		case 5:
+		deleteConfirm();
+		
+		break;
+		case 6: "BUFFER";
+		
+		break;
+		default: cout<<"BUFFER"<<endl;
+	}
 	}
 	
 	
