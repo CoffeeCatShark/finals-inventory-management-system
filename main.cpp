@@ -8,7 +8,7 @@ using namespace std;
 //inventory.deleteItem()
 //inventory.listItem()
 
-void menu(){
+bool menu(){
 		while(!validUser){
 		login();
 	}
@@ -30,7 +30,7 @@ string input;
 	if(adminControl == false){
 	switch (_input){
 		case 0: 
-		return;
+		return false;
 		
 		break;
 		case 1: inventory.listItem();
@@ -54,7 +54,7 @@ string input;
 	if(adminControl == true){
 		switch (_input){
 		case 0: 
-		return;
+		return false;
 		
 		break;
 		case 1: inventory.listItem();
@@ -86,15 +86,14 @@ string input;
 		default: cout<<"BUFFER"<<endl;
 	}
 	}
-	
-	
-	inventory.listItem();
-	
+return true;
 }
 
 int main(){
-	
-	menu();
+	bool isRunning = true;
+	while(isRunning){
+		isRunning = menu();
+	}
 	
 	
 	
