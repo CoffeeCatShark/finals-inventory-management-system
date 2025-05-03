@@ -160,7 +160,7 @@ class Inventory{
 		string input_;
 		for(int i=0;i<count;i++){
 			if(key == items[i]->getID()){
-				cout<<"Enter Quantity of "<<items[i]->getName()<<" to add"<<endl;
+				cout<<"Enter Quantity of "<<items[i]->getName()<<" to Update"<<endl;
 				int quant = exceptionHandle();
 				items[i]->setQuantity(quant);
 			}
@@ -205,8 +205,8 @@ class Inventory{
 			cout<<name<<id<<quantity;
 			
 	Items* item = new Items(name,id,quantity);
-	for(int i=0;i<count;i++){
-		items[i] = item;
+	for(int y=0;y<count;y++){
+		items[y] = item;
 	}
 			
 			}
