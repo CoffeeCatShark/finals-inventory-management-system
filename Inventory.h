@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 bool isString(const string& name) {	
@@ -167,6 +168,32 @@ class Inventory{
 		
 	}
 		
+	void initializeInventory(){
+		string name;
+		string id;
+		int quantity;
+		
+			string text;
+			string int_;
+			string text_[3];
+		ifStream ReadFile("DoNotDelete.txt");
+		getline(ReadFile,text)
+		
+			try{
+				int_ = stoi(text);
+			}
+			catch(invalid_argument&){
+				return;
+			}
+	count = int_		
+			
+			for(int i=0;i<count;i++){
+				for(int x=0;x<3;x++){
+						
+				}
+			}
+	}
+	
 	
 };
 
