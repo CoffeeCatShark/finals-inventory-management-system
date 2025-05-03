@@ -176,7 +176,7 @@ class Inventory{
 		
 			string text;
 			int number;
-			string text_[3];
+			string text_[3][100];
 			
 		ifstream ReadFile("DoNotOpen.txt");
 		getline(ReadFile,text);
@@ -192,23 +192,22 @@ class Inventory{
 			for(int i=0;i<count;i++){
 				for(int x=0;x<3;x++){
 					getline(ReadFile,text);
-					text_[x] = text;	
+					text_[x][i] = text;	
 							try{
-								number = stoi(text_[2]);
+								number = stoi(text_[2][i]);
 							}
 							catch(invalid_argument&){
 							}
-				name = text_[0];
-				id = text_[1];
+				name = text_[0][i];
+				id = text_[1][i];
 				quantity = number;
 				}
 				
 			cout<<name<<id<<quantity;
 			
 	Items* item = new Items(name,id,quantity);
-	for(int y=0;y<count;y++){
-		items[y] = item;
-	}
+		items[i] = item;
+	
 			
 			}
 	}
