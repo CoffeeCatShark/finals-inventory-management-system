@@ -160,9 +160,9 @@ class Inventory{
 		string input_;
 		for(int i=0;i<count;i++){
 			if(key == items[i]->getID()){
-				cout<<"Enter Quantity of "<<items[i]->getName()<<" to Update"<<endl;
+				cout<<"Enter Quantity of "<<items[i]->getName()<<" to Add"<<endl;
 				int quant = exceptionHandle();
-				items[i]->setQuantity(quant);
+				items[i]->setQuantity(items[i]->getQuantity()+quant);
 			}
 		}
 		
@@ -177,7 +177,7 @@ class Inventory{
 			int number;
 			string text_[3];
 			
-		ifstream ReadFile("DoNotDelete.txt");
+		ifstream ReadFile("DoNotOpen.txt");
 		getline(ReadFile,text);
 		
 			try{
