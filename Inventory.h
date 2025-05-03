@@ -174,23 +174,41 @@ class Inventory{
 		int quantity;
 		
 			string text;
-			string int_;
+			int number;
 			string text_[3];
-		ifStream ReadFile("DoNotDelete.txt");
-		getline(ReadFile,text)
+			
+		ifstream ReadFile("DoNotDelete.txt");
+		getline(ReadFile,text);
 		
 			try{
-				int_ = stoi(text);
+				number = stoi(text);
 			}
 			catch(invalid_argument&){
-				return;
+				
 			}
-	count = int_		
+	count = number;		
 			
 			for(int i=0;i<count;i++){
 				for(int x=0;x<3;x++){
-						
+					getline(ReadFile,text);
+					text_[x] = text;	
+							try{
+								number = stoi(text_[2]);
+							}
+							catch(invalid_argument&){
+							}
+				name = text_[0];
+				id = text_[1];
+				quantity = number;
 				}
+				
+			cout<<name<<id<<quantity;
+			
+	Items* item = new Items(name,id,quantity);
+	for(int i=0;i<count;i++){
+		items[i] = item;
+	}
+			
 			}
 	}
 	

@@ -90,6 +90,9 @@ return true;
 }
 
 int main(){
+	
+	inventory.initializeInventory();
+	
 	bool isRunning = true;
 	while(isRunning){
 		isRunning = menu();
