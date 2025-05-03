@@ -8,6 +8,7 @@ using namespace std;
 //inventory.deleteItem()
 //inventory.listItem()
 
+
 bool menu(){
 		while(!validUser){
 		login();
