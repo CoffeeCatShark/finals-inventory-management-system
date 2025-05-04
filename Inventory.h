@@ -12,6 +12,7 @@ bool isString(const string& name) {
     return !name.empty(); // Ensure the name is not empty
 }
 
+
 string capital(string input){
 	string _input;
 	
