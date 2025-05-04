@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <ctime>
 using namespace std;
 
 bool isString(const string& name) {	
@@ -236,6 +237,23 @@ class Inventory{
 		
 		
 	void printReceipt(){
+time_t timestamp;
+time(&timestamp);
+	
+		
+		
+		
+		ofstream Record("Records.txt");
+		
+		Record << "\tINVENTORY RECORDS "<<endl;
+		Record <<ctime(&timestamp)<<endl;
+		Record << "=================================="<<endl;
+		Record << "Item\tID\tQuantity"<<endl;
+		for(int i=0;i<count;i++){
+			Record<<items[i]->getName()<<"\t"<<items[i]->getID()<<"\t"<<items[i]->getQuantity()<<endl;
+		}
+		
+		
 		
 	}	
 	

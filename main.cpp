@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <ctime>
 #include "AccessControl.h"
 #include "Inventory.h"
 
@@ -81,7 +82,8 @@ string input;
 		deleteConfirm();
 		
 		break;
-		case 6: "BUFFER";
+		case 6: inventory.printReceipt();
+				cout<<"Inventory Receipt Printed."<<endl;
 		
 		break;
 		default: cout<<"BUFFER"<<endl;
