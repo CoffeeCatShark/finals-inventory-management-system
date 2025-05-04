@@ -233,6 +233,11 @@ class Inventory{
 	}
 	
 		
+		
+	void printReceipt(){
+		
+	}	
+	
 };
 
 Inventory& inventory = Inventory::getInstance();
