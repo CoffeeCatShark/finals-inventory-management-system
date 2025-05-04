@@ -92,6 +92,7 @@ return true;
 
 int main(){
 	
+	
 	inventory.initializeInventory();
 	
 	bool isRunning = true;
@@ -99,7 +100,7 @@ int main(){
 		isRunning = menu();
 	}
 	
-	
+	inventory.saveInventory();
 	
 	delete admin;
 	delete employee;

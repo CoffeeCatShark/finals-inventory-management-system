@@ -213,6 +213,28 @@ class Inventory{
 	}
 	
 	
+	
+	void saveInventory(){
+		
+		
+		
+		ofstream WriteFile("DoNotOpen.txt");
+		
+		WriteFile<<count<<endl;
+		
+		for(int i=0;i<count;i++){
+			for(int x=0;x<3;x++){
+				WriteFile<<items[x]->getName()<<endl;
+				WriteFile<<items[x]->getID()<<endl;
+				WriteFile<<items[x]->getQuantity()<<endl;
+			}
+		}
+		
+		WriteFile.close();
+		
+	}
+	
+		
 };
 
 Inventory& inventory = Inventory::getInstance();
