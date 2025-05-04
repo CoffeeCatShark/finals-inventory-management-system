@@ -223,11 +223,9 @@ class Inventory{
 		WriteFile<<count<<endl;
 		
 		for(int i=0;i<count;i++){
-			for(int x=0;x<3;x++){
-				WriteFile<<items[x]->getName()<<endl;
-				WriteFile<<items[x]->getID()<<endl;
-				WriteFile<<items[x]->getQuantity()<<endl;
-			}
+			WriteFile<<items[i]->getName()<<endl;
+			WriteFile<<items[i]->getID()<<endl;
+			WriteFile<<items[i]->getQuantity()<<endl;
 		}
 		
 		WriteFile.close();
