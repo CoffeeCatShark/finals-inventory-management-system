@@ -85,6 +85,7 @@ string input;
 		case 6: inventory.printReceipt();
 				cout<<"Inventory Receipt Printed."<<endl;
 		
+		
 		break;
 		default: cout<<"BUFFER"<<endl;
 	}

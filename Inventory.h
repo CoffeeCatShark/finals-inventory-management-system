@@ -239,9 +239,6 @@ class Inventory{
 	void printReceipt(){
 time_t timestamp;
 time(&timestamp);
-	
-		
-		
 		
 		ofstream Record("Records.txt");
 		
