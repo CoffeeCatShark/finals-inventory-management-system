@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include <ctime>
+#include <string>
 using namespace std;
 
 bool isString(const string& name) {	
@@ -204,8 +205,7 @@ class Inventory{
 				id = text_[1][i];
 				quantity = number;
 				}
-				
-			cout<<name<<id<<quantity;
+
 			
 	Items* item = new Items(name,id,quantity);
 		items[i] = item;
@@ -239,11 +239,12 @@ class Inventory{
 	void printReceipt(){
 time_t timestamp;
 time(&timestamp);
-		
+struct tm * myTime = localtime(&timestamp);	
+
 		ofstream Record("Records.txt");
 		
 		Record << "\tINVENTORY RECORDS "<<endl;
-		Record <<ctime(&timestamp)<<endl;
+		Record <<asctime(myTime)<<endl;
 		Record << "=================================="<<endl;
 		Record << "Item\tID\tQuantity"<<endl;
 		for(int i=0;i<count;i++){
